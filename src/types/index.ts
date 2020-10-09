@@ -1,0 +1,2 @@
+// props
+export interface IAppProps { };
