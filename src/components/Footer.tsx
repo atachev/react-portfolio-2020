@@ -51,6 +51,11 @@ const ContainerWrapper = styled(Container)`
     display: flex !important;
     align-items: center;
 `;
+const Link = styled.a.attrs(props => ({
+  href: props.href || '#',
+}))`
+  text-decoration: underline;
+`;
 
 const Footer: React.FC<IAppProps> = props => {
   const classes = useStyles();
@@ -60,7 +65,7 @@ const Footer: React.FC<IAppProps> = props => {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <Copyrights>
-              Aleksa Tachev | &copy; 2020 all rights RESERVED
+              Алекса Тачев &amp;&amp; <Link>Вдъхновителите</Link> | &copy; 2020 all rights RESERVED
             </Copyrights>
           </Grid>
           <Grid item xs={12} sm={6}>

@@ -2,11 +2,12 @@
 	"compilerOptions": {
 		"outDir": "./dist/",
 		"noImplicitAny": true,
-		"target": "es6",
+		"target": "ES6",
 		"lib": ["es5", "es6", "dom"],
 		"jsx": "react",
 		"allowJs": true,
 		"moduleResolution": "node",
-		// "skipLibCheck": true
+		// "skipLibCheck": true,
+		// https://spectrum.chat/styled-components/general/looks-like-types-styled-components-depends-on-types-react-native-which-conflicts-with-types-node-ugh~51f73d8b-9f3d-4ac0-966c-895c35b0dd48
 	}
 }

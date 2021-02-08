@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from 'styled-components';
-import './style.scss';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { IAppProps } from "./types";
 // import PersistentDrawerLeft from "./components/Drawer";

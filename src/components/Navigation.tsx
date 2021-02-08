@@ -30,7 +30,7 @@ const LogoContainer = styled.div`
 const LogoImg = styled.img.attrs(() => ({
     src: Logo
 }))`
-    height: 30px;
+    height: 40px;
 `;
 
 const LinksContainer = styled.div`
@@ -69,7 +69,7 @@ const Socials = styled.div`
 `;
 
 const SocialsText = styled.span`
-    text-decoration: underline;
+    // text-decoration: underline;
     margin-right: 10px;
 `;
 
@@ -156,13 +156,15 @@ const Navigation = () => {
     const renderLinks = (onClick?: any) => {
         return (
             <>
-                <LinkTo href="/" onClick={onClick}>АЗ-ът</LinkTo>
-                <LinkTo href="/amtis" onClick={onClick}>Можеш ли?</LinkTo>
-                <LinkTo href="/portfolio" onClick={onClick}>Portfolio</LinkTo>
-                <LinkTo href="/cv" onClick={onClick}>Resume</LinkTo>
-                <LinkTo href="/motivation" onClick={onClick}>Motivation</LinkTo>
-                <LinkTo href="/contact" onClick={onClick}>#Contact</LinkTo>
-                <LinkTo href="/blog" onClick={onClick}>Blog</LinkTo>
+                {/* Можеш ли? */}
+                <LinkTo href="/amtis" onClick={onClick}>АМТИС</LinkTo>
+                <LinkTo href="/portfolio" onClick={onClick}>Работно</LinkTo>
+                <LinkTo href="/cv" onClick={onClick}>АЗ-ът в кратце</LinkTo>
+                <LinkTo href="/motivation" onClick={onClick}>Мотивация/та/ (ми)</LinkTo>
+                <LinkTo href="/blog" onClick={onClick}>Мисли/те/ (ми) в пост/и/</LinkTo> {/*Мислено е */}
+                <LinkTo href="/contact" onClick={onClick}>#ПишиМи</LinkTo>
+                {/* страница за многозначни думи/изрази */}
+                {/* <LinkTo href="/blog" onClick={onClick}>Смислици</LinkTo> */}
             </>
         );
     };
@@ -172,9 +174,11 @@ const Navigation = () => {
                 <HamburgerOpenMenuBtn onClick={openNavigation}>
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" className="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
                 </HamburgerOpenMenuBtn>
-                <LogoContainer>
-                    <LogoImg />
-                </LogoContainer>
+                <LinkTo href="/">
+                    <LogoContainer>
+                        <LogoImg />
+                    </LogoContainer>
+                </LinkTo>
                 <LinksContainer>
                     <Links>
                         {renderLinks()}

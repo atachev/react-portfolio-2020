@@ -50,12 +50,12 @@ const Header = styled.div`
 
 const Text = styled.h1`
   margin: 0;
-  font-size: 4rem;
+  font-size: 3rem;
 `;
 
 const Subtext = styled.h3`
   margin-top: 0;
-  font-size: 3.5rem;
+  font-size: 4rem;
 `;
 
 const LogoContainer = styled.img.attrs(() => ({
@@ -132,10 +132,12 @@ const Home: React.FC<IAppProps> = () => {
           <ContentRow>
             <Column>
               <Text>
-                Мотивиращ текст...
+                Добре дошъл,
+                {/* Не бъди изкуствен */}
               </Text>
               <Subtext>
-                тук.
+                Мотивиращ текст...тук.
+                {/* Създавай изкуство */}
               </Subtext>
             </Column>
           </ContentRow>

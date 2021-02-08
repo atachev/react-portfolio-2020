@@ -16,7 +16,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 const config: webpack.Configuration = {
   mode: "production",
-  entry: "src/index.tsx",
+  entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
@@ -35,10 +35,6 @@ const config: webpack.Configuration = {
         use: [
           // Creates `style` nodes from JS strings
           'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
         ],
       },
       {
