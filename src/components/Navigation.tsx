@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Container from '@material-ui/core/Container';
 import { Logo } from '../assets/index';
 import { Link } from "react-router-dom";
-
+import { AmtisLogo } from "../../src/icons/index";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
@@ -58,6 +58,7 @@ const LinkTo = styled(Link).attrs((props) => ({
     padding: 0 8px;
     color: #000;
     text-decoration: none;
+    display: inline-grid;
     &:hover {
         text-decoration: underline;
     }
@@ -141,9 +142,21 @@ const FeedbackLink = styled.a.attrs((props) => ({
     border-radius: 2px;
 `;
 
+const NavLinkContainer = styled.span`
+    display: inline-flex;
+    align-items: center;
+`;
+
+const NavLinkLogo = styled.img.attrs((props) => ({
+    src: AmtisLogo,
+}))`
+    width: 20px;
+    margin-right: 7px;
+`;
+
 const Navigation = () => {
     const [isOpen, setMenuState] = React.useState(false);
-    
+
     const openNavigation = () => {
         console.log("opened");
         setMenuState(true);
@@ -157,12 +170,17 @@ const Navigation = () => {
         return (
             <>
                 {/* Можеш ли? */}
-                <LinkTo href="/amtis" onClick={onClick}>АМТИС</LinkTo>
+                <LinkTo href="/amtis" onClick={onClick}>
+                    <NavLinkContainer>
+                        <NavLinkLogo />
+                        АМТИС
+                    </NavLinkContainer>
+                </LinkTo>
                 <LinkTo href="/portfolio" onClick={onClick}>Работно</LinkTo>
-                <LinkTo href="/cv" onClick={onClick}>АЗ-ът в кратце</LinkTo>
-                <LinkTo href="/motivation" onClick={onClick}>Мотивация/та/ (ми)</LinkTo>
-                <LinkTo href="/blog" onClick={onClick}>Мисли/те/ (ми) в пост/и/</LinkTo> {/*Мислено е */}
-                <LinkTo href="/contact" onClick={onClick}>#ПишиМи</LinkTo>
+                <LinkTo href="/cv" onClick={onClick}>АЗът</LinkTo>
+                <LinkTo href="/motivation" onClick={onClick}>Муза{/*Мотивация/та/ (ми)*/}</LinkTo>
+                <LinkTo href="/blog" onClick={onClick}>Мисли</LinkTo> {/*Мислено е */}
+                <LinkTo href="/contact" onClick={onClick}>Пиши ми</LinkTo>
                 {/* страница за многозначни думи/изрази */}
                 {/* <LinkTo href="/blog" onClick={onClick}>Смислици</LinkTo> */}
             </>
@@ -190,7 +208,7 @@ const Navigation = () => {
                         <HamburgerLinks>
                             {renderLinks(closeNavigation)}
                         </HamburgerLinks>
-                    </HamburgerMenu> }
+                    </HamburgerMenu>}
                     <Socials>
                         <SocialsText>Find me on</SocialsText>
                         <SocialIcon><FontAwesomeIcon icon={faLinkedinIn} /></SocialIcon>
